@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ficha de Municipalidad</title>
+</head>
+<body>
+    <h1>
+        Estas viendo la municipalidad {{ municipality_id }}
+    </h1>
+
+    <h2>
+        Lista de municipalidades
+    </h2>
+
+    <ul>
+        {% for muni in municipalities_list %}
+            <li> {{ muni }} </li>
+        {% endfor %}
+    </ul>
+
+
+</body>
+</html>

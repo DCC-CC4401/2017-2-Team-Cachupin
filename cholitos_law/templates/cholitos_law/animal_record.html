@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ficha de Animal</title>
+</head>
+<body>
+    <h1>
+        Estas viendo el animal {{ animal_id }}
+    </h1>
+
+    <h2>
+        Lista de animales
+    </h2>
+
+    <ul>
+        {% for animal in animals_list %}
+            <li> {{ animal }} </li>
+        {% endfor %}
+    </ul>
+
+
+</body>
+</html>
+

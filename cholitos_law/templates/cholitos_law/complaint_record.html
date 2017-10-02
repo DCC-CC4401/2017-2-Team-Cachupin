@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ficha de Denuncia</title>
+</head>
+<body>
+    <h1>
+        Estas viendo la denuncia {{ complaint_id }}
+    </h1>
+
+    <h2>
+        Lista de denuncias
+    </h2>
+
+    <ul>
+        {% for complaint in complaint_list %}
+            <li> {{ complaint }} </li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>

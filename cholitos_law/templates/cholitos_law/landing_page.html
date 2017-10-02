@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Landing</title>
+</head>
+<body>
+    <h1>
+        Hola Landing Page
+    </h1>
+
+    <h2>
+        Lista de denuncias
+    </h2>
+    <ul>
+        {% for complaint in complaints_list %}
+            <li>{{ complaint }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>
+        Lista de animales
+    </h2>
+    <ul>
+        {% for animal in animals_list %}
+            <li>{{ animal }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>
+        Lista de municipalidades
+    </h2>
+    <ul>
+        {% for muni in municipalities_list %}
+            <li>{{ muni }}</li>
+        {% endfor %}
+    </ul>
+
+
+</body>
+</html>
+
