@@ -3,11 +3,12 @@ import datetime
 from django.db import models
 from django.utils import timezone
 
+
 class Animal(models.Model):
     name = models.CharField(max_length=200)
     pub_date = models.DateTimeField('date published')
     image = models.CharField(max_length=200, default='')
-    birth =  models.DateTimeField()
+    birth = models.DateTimeField()
     description = models.CharField(max_length=500, default='')
     gender = models.CharField(max_length=10, default='hembra')
 
@@ -19,6 +20,7 @@ class Animal(models.Model):
     def __str__(self):
         return self.name
 
+
 class Municipality(models.Model):
     name = models.CharField(max_length=200)
     commune = models.CharField(max_length=100)
@@ -29,6 +31,7 @@ class Municipality(models.Model):
 
     def __str__(self):
         return self.name
+
 
 class Complaint(models.Model):
     type = models.CharField(max_length=100)
