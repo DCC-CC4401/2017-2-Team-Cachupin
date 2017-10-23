@@ -5,6 +5,8 @@ from .models import Complaint
 from .models import Animal
 from .models import Municipality
 
+from .models import AnimalForm
+
 
 def landing_page(request):
     complaints_list = Complaint.objects.all()
@@ -19,17 +21,21 @@ def landing_page(request):
 
 def animal_record(request, animal_id):
     animals_list = Animal.objects.all()
+    animal_form = AnimalForm()
     context = {
         'animals_list' : animals_list,
         'animal_id' : animal_id,
+        'animal_form' : animal_form,
     }
     return render(request, 'cholitos_law/animal_record.html', context)
 
-def complaint_record(request, complaint_id):
+def complaint_record(request, complaint_id=''):
     complaints_list = Complaint.objects.all()
+
     context = {
         'complaints_list': complaints_list,
         'complaint_id' : complaint_id,
+        'Complaint': Complaint,
     }
     return render(request, 'cholitos_law/complaint_record.html', context)
 

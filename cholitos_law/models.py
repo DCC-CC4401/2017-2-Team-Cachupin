@@ -2,9 +2,11 @@ import datetime
 
 from django.db import models
 from django.utils import timezone
+from django.forms import ModelForm
 
 class Animal(models.Model):
     name = models.CharField(max_length=200)
+    animal_type = models.CharField(max_length=100)
     pub_date = models.DateTimeField('date published')
     image = models.CharField(max_length=200, default='')
     birth =  models.DateTimeField()
@@ -18,6 +20,11 @@ class Animal(models.Model):
 
     def __str__(self):
         return self.name
+
+class AnimalForm(ModelForm):
+    class Meta:
+        model = Animal
+        fields = ['name', 'animal_type', 'gender', 'image', 'birth', 'description' ]
 
 class Municipality(models.Model):
     name = models.CharField(max_length=200)
@@ -48,3 +55,8 @@ class Complaint(models.Model):
                      'Violencia',
                      'Venta ambulante')
     animals_options = ('Perro', 'Gato', 'Otro')
+
+# class ComplaintForm(ModelForm):
+#     class Meta:
+#         model = Complaint
+#         fields = ['type', 'animal_type', '']

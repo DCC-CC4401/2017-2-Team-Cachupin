@@ -36,105 +36,15 @@
 
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
-{#    <h1>#}
-{#        Hola Landing Page#}
-{#    </h1>#}
-{##}
-{#    <h2>#}
-{#        Lista de denuncias#}
-{#    </h2>#}
-{#    <ul>#}
-{#        {% for complaint in complaints_list %}#}
-{#            <li>{{ complaint }}</li>#}
-{#        {% endfor %}#}
-{#    </ul>#}
-{##}
-{#    <h2>#}
-{#        Lista de animales#}
-{#    </h2>#}
-{#    <ul>#}
-{#        {% for animal in animals_list %}#}
-{#            <li>{{ animal }}</li>#}
-{#        {% endfor %}#}
-{#    </ul>#}
-{##}
-{#    <h2>#}
-{#        Lista de municipalidades#}
-{#    </h2>#}
-{#    <ul>#}
-{#        {% for muni in municipalities_list %}#}
-{#            <li>{{ muni }}</li>#}
-{#        {% endfor %}#}
-{#    </ul>#}
 
     <div class="wrapper">
-        <!-- Main Header -->
-        <header class="main-header">
-            <!-- Logo -->
-            <a href="#" class="logo">
-                <!-- mini logo for sidebar mini 50x50 pixels -->
-                <span class="logo-mini"><b>C</b></span>
-                <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg"><b>Cachupin</b></span>
-            </a>
 
-            <!-- Header Navbar -->
-            <nav class="navbar navbar-static-top" role="navigation">
-                <!-- Sidebar toggle button-->
-                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-                    <span class="sr-only">Toggle navigation</span>
-                </a>
-                <!-- Navbar Right Menu -->
-                <div class="navbar-custom-menu">
-                    <ul class="nav navbar-nav">
-                        <!-- User Account Menu -->
-                        <li class="dropdown user user-menu">
-                            <!-- Menu Toggle Button -->
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <!-- The user image in the navbar-->
-                                <img src="static/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                                <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                                <span class="hidden-xs">Juan Tapia</span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <!-- The user image in the menu -->
-                                <li class="user-header">
-                                    <img src="static/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                                    <p>
-                                        Juan Tapia
-                                    </p>
-                                </li>
-                                <!-- Menu Footer-->
-                                <li class="user-footer">
-                                    <div class="pull-left">
-                                        <button type="button" class="btn btn-default btn-flat" data-toggle="modal" data-target="#myModal">
-                                            Perfil
-                                        </button>
-                                    </div>
-                                    <div class="pull-right">
-                                        <a href="login.html" class="btn btn-default btn-flat">Salir</a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
+        {% include 'cholitos_law/header.html' %}
+
         <!-- Left side column. contains the logo and sidebar -->
         <aside class="main-sidebar">
             <!-- sidebar: style can be found in sidebar.less -->
             <section class="sidebar">
-                <!-- Sidebar user panel (optional) -->
-                <div class="user-panel">
-                    <div class="pull-left image">
-                        <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                    </div>
-                    <div class="pull-left info">
-                        <br>
-                        <p>Juan Tapia</p>
-                    </div>
-                </div>
                 <!-- Sidebar Menu -->
                 <ul class="sidebar-menu" data-widget="tree">
                     <li class="treeview active menu-open">
@@ -175,17 +85,11 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="{% url 'complaint_record_no_param' %}">
                             <i class="fa fa-bullhorn"></i>
                             <span>Denunciar</span>
                         </a>
                     </li>
-{#                    <li>#}
-{#                        <a href="#">#}
-{#                            <i class="fa fa-star"></i>#}
-{#                            <span>ONG</span>#}
-{#                        </a>#}
-{#                    </li>#}
                 </ul>
                 <!-- /.sidebar-menu -->
             </section>
@@ -195,9 +99,6 @@
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
-{#            <section class="content-header">#}
-{#                <h1>Adoptar</h1>#}
-{#            </section>#}
             <!-- Main content -->
             <section class="content container-fluid">
 
@@ -208,18 +109,7 @@
         </div>
         <!-- /.content-wrapper -->
 
-        <!-- Main Footer -->
-        <footer class="main-footer">
-            <!-- To the right -->
-            <div class="pull-right hidden-xs">
-            Anything you want
-            </div>
-            <!-- Default to the left -->
-            <strong>
-                Copyright &copy; 2017 Cholito.
-            </strong>
-            All rights reserved.
-        </footer>
+        {% include 'cholitos_law/footer.html' %}
 
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
