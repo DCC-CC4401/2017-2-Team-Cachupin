@@ -98,15 +98,42 @@
     </nav>
 </header>
 <!-- Left side column. contains the logo and sidebar -->
-
-
 <div class="col-md-6">
     <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Quick Example</h3>
+              <h3 class="box-title">Ficha Animal</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+                <table>
+                    <tr>
+                        <th> Nombre </th>
+                        <th> {{ this_animal.name }} </th>
+                    </tr>
+                    <tr>
+                        <td> Tipo de animal </td>
+                        <td> {{ this_animal.animal_type }} </td>
+                    </tr>
+                    <tr>
+                        <td> Sexo </td>
+                        <td> {{ this_animal.gender }} </td>
+                    </tr>
+                    <tr>
+                        <td> Edad estimada </td>
+                        <td> {{ age }} </td>
+                    </tr>
+                    <tr>
+                        <td> Edad estimada </td>
+                        <td> {{ time }} </td>
+                    </tr>
+                </table>1
+                <img src="/static/dist/img/{{this_animal.image}}">
+                <h2> Descripcion </h2>
+                <p>{{ this_animal.description }}</p>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
+            <h2> Adopta a {{ this_animal.name }} </h2>
             <form role="form">
               <div class="box-body">
                 <div class="form-group">

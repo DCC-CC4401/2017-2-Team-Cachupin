@@ -11,13 +11,25 @@ class Animal(models.Model):
     description = models.CharField(max_length=500, default='')
     gender = models.CharField(max_length=10, default='hembra')
 
-    animals_options = ('Perro', 'Gato', 'Otro')
+    PERRO = 'Perro'
+    GATO = 'Gato'
+    OTRO = 'Otro'
+    ANIMALS_OPTIONS = (
+        (PERRO,'Perro'),
+        (GATO,'Gato'),
+        (OTRO,'Otro')
+    )
+
+    animal_type = models.CharField(max_length=6,choices=ANIMALS_OPTIONS,default='PERRO')
 
     def was_published_recently(self):
         return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
 
     def __str__(self):
         return self.name
+
+    def in_adoption_now(self):
+        return self.pub_date - datetime.date.now()
 
 class Municipality(models.Model):
     name = models.CharField(max_length=200)

@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from .models import Complaint
 from .models import Animal
 from .models import Municipality
+from datetime import datetime, timedelta
 
 
 def landing_page(request):
@@ -22,6 +23,9 @@ def animal_record(request, animal_id):
     context = {
         'animals_list' : animals_list,
         'animal_id' : animal_id,
+        'this_animal': Animal.objects.get(pk=animal_id),
+        'age': datetime.today() - Animal.objects.get(pk=animal_id).birth.replace(tzinfo=None),
+        'time': datetime.today() - Animal.objects.get(pk=animal_id).pub_date.replace(tzinfo=None),
     }
     return render(request, 'cholitos_law/animal_record.html', context)
 
