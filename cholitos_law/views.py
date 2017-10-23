@@ -36,6 +36,7 @@ def complaint_record(request, complaint_id):
     context = {
         'complaints_list': complaints_list,
         'complaint_id': complaint_id,
+        'this_complaint': Complaint.objects.get(pk=complaint_id)
     }
     return render(request, 'cholitos_law/complaint_record.html', context)
 
