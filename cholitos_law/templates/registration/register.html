@@ -46,7 +46,19 @@
                             <form method="post" class="form-signin">
                                   <form method="post">
                                     {% csrf_token %}
-                                    {{ form.as_p }}
+                                  <div>
+                                      <td>{{ form.username.label_tag }}</td> <br>
+                                  <td>{{ form.username }}</td>
+                                </div>
+                                <div>
+                                  <td>{{ form.password1.label_tag }}</td> <br>
+                                  <td>{{ form.password1 }}</td>
+                                </div>
+                                <div>
+                                  <td>{{ form.password2.label_tag }}</td> <br>
+                                  <td>{{ form.password2 }}</td>
+                                </div>
+{#                                    {{ form.as_p }}#}
                                     <button type="submit">Registrate</button>
                                   </form>
                                 {# <input type="text" class="form-control" placeholder="Email" required autofocus>#}
