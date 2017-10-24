@@ -17,6 +17,7 @@
         <!-- Navbar Right Menu -->
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
+                {% if user.is_authenticated %}
                 <!-- User Account Menu -->
                 <li class="dropdown user user-menu">
                     <!-- Menu Toggle Button -->
@@ -31,7 +32,7 @@
                         <li class="user-header">
                             <img src="/static/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                             <p>
-                                Juan Tapia
+                                {{ user.get_username }}
                             </p>
                         </li>
                         <!-- Menu Footer-->
@@ -47,6 +48,12 @@
                         </li>
                     </ul>
                 </li>
+                {% else %}
+                    <div class="center-block">
+                        <button href="/login.html" type="button" class="btn btn-success">Ingresar</button>
+                    </div>
+                {% endif %}
+                <!--button type="button" class="btn btn-primary">Primary</button -->
             </ul>
         </div>
     </nav>
