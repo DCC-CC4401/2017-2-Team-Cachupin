@@ -1,0 +1,68 @@
+.product-holder {
+    position: relative;
+    display: block;
+}
+
+.plus-image1 {
+    left: 25%;
+    top: 70%;
+    position: absolute;
+    margin-top: -25px;
+    margin-left: -25px;
+}
+
+.plus-image2 {
+    left: 30%;
+    top: 40%;
+    position: absolute;
+    margin-top: -25px;
+    margin-left: -25px;
+}
+
+.plus-image3 {
+    left: 60%;
+    top: 10%;
+    position: absolute;
+    margin-top: -25px;
+    margin-left: -25px;
+}
+
+.plus-image4 {
+    left: 90%;
+    top: 30%;
+    position: absolute;
+    margin-top: -25px;
+    margin-left: -25px;
+}
+
+.plus-image5 {
+    left: 20%;
+    top: 50%;
+    position: absolute;
+    margin-top: -25px;
+    margin-left: -25px;
+}
+
+.plus-image6 {
+    left: 80%;
+    top: 90%;
+    position: absolute;
+    margin-top: -25px;
+    margin-left: -25px;
+}
+
+.plus-image7 {
+    left: 64%;
+    top: 76%;
+    position: absolute;
+    margin-top: -25px;
+    margin-left: -25px;
+}
+
+.plus-image8 {
+    left: 62%;
+    top: 39%;
+    position: absolute;
+    margin-top: -25px;
+    margin-left: -25px;
+}
