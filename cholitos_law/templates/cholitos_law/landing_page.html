@@ -113,7 +113,11 @@
                         <div class='product-holder'>
                             <img src="/static/dist/img/mapa.png" class='img-responsive'>
                             <img href="#" data-toggle="popover" tabindex="50" src="/static/dist/img/Map-Pin.png" width="25px" height="40px" class='plus-image1'>
-                            <img href="#" data-toggle="popover" tabindex="50" src="/static/dist/img/star.ico" width="30px" height="30px" class='plus-image2'>
+                            {% if user.is_authenticated %}
+                                <img href="#" data-toggle="popover" tabindex="50" src="/static/dist/img/star.ico" width="30px" height="30px" class='plus-image2'>
+                            {% else %}
+                                <img href="#" data-toggle="popover" tabindex="50" src="/static/dist/img/Map-Pin.png" width="25px" height="40px" class='plus-image2'>
+                            {% endif %}
                             <img href="#" data-toggle="popover" tabindex="50" src="/static/dist/img/Map-Pin.png" width="25px" height="40px" class='plus-image3'>
                             <img href="#" data-toggle="popover" tabindex="50" src="/static/dist/img/Map-Pin.png" width="25px" height="40px" class='plus-image4'>
                             <img href="#" data-toggle="popover" tabindex="50" src="/static/dist/img/Map-Pin.png" width="25px" height="40px" class='plus-image5'>
