@@ -65,3 +65,9 @@ def municipality_record(request, municipality_id):
     }
 
     return render(request, 'cholitos_law/municipality_record.html', context)
+
+def login(request):
+    return render(request, 'cholitos_law/login.html')
+
+def register(request):
+    return render(request, 'cholitos_law/register.html')

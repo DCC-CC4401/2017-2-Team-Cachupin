@@ -13,4 +13,8 @@ urlpatterns = [
     url(r'^complaints/(?P<complaint_id>[0-9]+)/$', views.complaint_record, name='complaint_record'),
     # ex: /municipality/5/
     url(r'^municipalities/(?P<municipality_id>[0-9]+)/$', views.municipality_record, name='municipality_record'),
+    # login
+    url(r'^login/$', views.login, name='login'),
+    # register
+    url(r'^register/$', views.register, name='register'),
 ]
