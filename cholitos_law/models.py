@@ -1,6 +1,7 @@
 import datetime
 
 from django.db import models
+from django.contrib.auth.models import User
 from django.utils import timezone
 from django.forms import ModelForm
 
@@ -49,7 +50,7 @@ class Animal(models.Model):
         (OTRO,'Otro')
     )
 
-    animal_type = models.CharField(max_length=100,choices=ANIMALS_OPTIONS,default='PERRO')
+    animal_type = models.CharField(max_length=100,choices=ANIMALS_OPTIONS,default=PERRO)
 
     def was_published_recently(self):
         return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
@@ -67,11 +68,32 @@ class Complaint(models.Model):
     comment = models.CharField(max_length=500)
     image = models.CharField(max_length=200)
     rescue = models.BooleanField()
+    municipality = models.ForeignKey(Municipality, on_delete=models.SET_DEFAULT, default='')
 
-    types_options = ('Abandono de Calle',
-                     'Exposición a temperaturas extremas',
-                     'Falta de Agua',
-                     'Falta de Comida',
-                     'Violencia',
-                     'Venta ambulante')
-    animals_options = ('Perro', 'Gato', 'Otro')
+    ABANDONO = 'Abandono de Calle'
+    EXPOSICION = 'Exposición a temperaturas extremas'
+    FAGUA = 'Falta de Agua'
+    FCOMIDA = 'Falta de Comida'
+    VIOLENCIA = 'Violencia'
+    VENTA = 'Venta ambulante'
+    TYPES_OPTIONS = (
+        (ABANDONO,'Abandono de Calle'),
+        (EXPOSICION,'Exposición a temperaturas extremas'),
+        (FAGUA,'Falta de Agua'),
+        (FCOMIDA,'Falta de Comida'),
+        (VIOLENCIA,'Violencia'),
+        (VENTA,'Venta ambulante')
+    )
+
+    type_complaint = models.CharField(max_length=30,choices=TYPES_OPTIONS,default=ABANDONO)
+
+    PERRO = 'Perro'
+    GATO = 'Gato'
+    OTRO = 'Otro'
+    ANIMALS_OPTIONS = (
+        (PERRO,'Perro'),
+        (GATO,'Gato'),
+        (OTRO,'Otro')
+    )
+
+    animals_options = models.CharField(max_length=100,choices=ANIMALS_OPTIONS,default=PERRO)
