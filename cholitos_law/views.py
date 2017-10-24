@@ -58,6 +58,20 @@ def complaint_record(request, complaint_id=''):
     }
     return render(request, 'cholitos_law/complaint_record.html', context)
 
+
+def complaint_view(request,complaint_id):
+    complaints_list = Complaint.objects.all()
+
+    this_complaint = Complaint.objects.get(pk=complaint_id)
+
+    context = {
+        'complaints_list': complaints_list,
+        'complaint_id': complaint_id,
+        'this_complaint':this_complaint,
+        'Complaint': Complaint,
+    }
+    return render(request, 'cholitos_law/complaint_record.html', context)
+
 @permission_required('cholitos_law.is_muni', login_url='/accounts/login/')
 def municipality_record(request, municipality_id):
 
