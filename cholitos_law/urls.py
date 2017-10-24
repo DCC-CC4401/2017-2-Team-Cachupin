@@ -18,4 +18,6 @@ urlpatterns = [
     url(r'^accounts/', include('django.contrib.auth.urls')),
     # register
     # url(r'^register/$', views.register, name='register'),
+    # add complaint
+    url(r'^add_complaint/$', views.add_complaint, name='add_complaint'),
 ]

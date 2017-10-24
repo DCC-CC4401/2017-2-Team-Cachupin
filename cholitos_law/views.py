@@ -5,6 +5,7 @@ from .models import Complaint
 from .models import Animal
 from .models import Municipality
 from datetime import datetime, timedelta
+from django.core.files.storage import FileSystemStorage
 
 
 def landing_page(request):
@@ -48,11 +49,14 @@ def complaint_record(request, complaint_id=''):
 
     this_complaint = Complaint.objects.get(pk=complaint_id) if complaint_id !='' else None
 
+    municipality_list = Municipality.objects.all()
+
     context = {
         'complaints_list': complaints_list,
         'complaint_id': complaint_id,
         'this_complaint':this_complaint,
         'Complaint': Complaint,
+        'Municipality': municipality_list,
     }
     return render(request, 'cholitos_law/complaint_record.html', context)
 
@@ -77,3 +81,31 @@ def municipality_record(request, municipality_id):
 
 # def register(request):
 #     return render(request, 'cholitos_law/register.html')
+
+def add_complaint(request):
+    if(request.method == 'POST'):
+        type_complaint = request.POST['tipo']
+        type_animal = request.POST['tipo_animal']
+        gender = request.POST['gender']
+        hurt = request.POST['hurt']
+        comment = request.POST['comment']
+        # The image is not being correctly stored
+        this_file = request.FILES['image']
+        fs = FileSystemStorage()
+        filename = fs.save(this_file.name, this_file)
+        uploaded_file_url = fs.url(filename)
+
+        # For now just apply the first value
+        municipality = Municipality.objects.all()[0]
+
+        new_complaint = Complaint(
+            latitude=0, longitude=0, gender=gender, hurt=hurt, comment=comment,
+            image=this_file.name, rescue=False,municipality=municipality,type_complaint=type_complaint,
+            animals_options= type_animal
+        )
+        new_complaint.save()
+
+        return render(request, 'cholitos_law/sucess_complaint.html')
+
+    else:
+        return landing_page(request)
