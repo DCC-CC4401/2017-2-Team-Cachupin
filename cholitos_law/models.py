@@ -7,6 +7,7 @@ from django.forms import ModelForm
 
 
 class Municipality(models.Model):
+
     name = models.CharField(max_length=200)
     commune = models.CharField(max_length=100)
     region = models.CharField(max_length=200)
@@ -16,6 +17,9 @@ class Municipality(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        permissions = (("is_muni", "Can view Munis"),)
 
 
 class Ong(models.Model):

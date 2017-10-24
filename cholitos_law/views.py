@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login, authenticate
+from django.contrib.auth.decorators import permission_required
 
-from django.http import HttpResponse
 from .models import Complaint
 from .models import Animal
 from .models import Municipality
@@ -58,9 +58,14 @@ def complaint_record(request, complaint_id=''):
     }
     return render(request, 'cholitos_law/complaint_record.html', context)
 
-
+@permission_required('cholitos_law.is_muni', login_url='/accounts/login/')
 def municipality_record(request, municipality_id):
-    municipality = Municipality.objects.get(pk=municipality_id)
+
+    try:
+        municipality = Municipality.objects.get(pk=municipality_id)
+    except Exception:
+        municipality = None
+
 
     complaints_list = Complaint.objects.filter(
         municipality=municipality_id
@@ -73,9 +78,6 @@ def municipality_record(request, municipality_id):
     }
 
     return render(request, 'cholitos_law/municipality_record.html', context)
-
-# def login(request):
-#     return render(request, 'cholitos_law/templates/registration/login.html')
 
 def register(request):
     if request.method == 'POST':
