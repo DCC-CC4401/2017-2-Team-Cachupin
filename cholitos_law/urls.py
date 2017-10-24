@@ -17,5 +17,5 @@ urlpatterns = [
     # login
     url(r'^accounts/', include('django.contrib.auth.urls')),
     # register
-    # url(r'^register/$', views.register, name='register'),
+    url(r'^accounts/register$', views.register, name='register'),
 ]
