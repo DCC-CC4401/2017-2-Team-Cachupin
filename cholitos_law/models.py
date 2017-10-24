@@ -63,8 +63,6 @@ class Animal(models.Model):
         return self.name
 
 class Complaint(models.Model):
-    type = models.CharField(max_length=100)
-    animal_type = models.CharField(max_length=100)
     latitude = models.FloatField()
     longitude = models.FloatField()
     gender = models.CharField(max_length=10)

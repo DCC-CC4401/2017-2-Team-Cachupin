@@ -123,3 +123,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = '/'
+
+MEDIA_URL = '/cholitos_law/static/dist/img/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'cholitos_law/static/dist/img/')
