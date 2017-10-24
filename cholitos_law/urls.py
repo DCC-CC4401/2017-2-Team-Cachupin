@@ -11,13 +11,13 @@ urlpatterns = [
     # ex: /complaints
     url(r'^complaints$', views.complaint_record, name='complaint_record_no_param'),
     # ex: /complaints/5/
-    url(r'^complaints/(?P<complaint_id>[0-9]+)/$', views.complaint_record, name='complaint_record'),
+    url(r'^complaints/(?P<complaint_id>[0-9]+)/$', views.complaint_view, name='complaint_view'), 
     # ex: /municipality/5/
     url(r'^municipalities/(?P<municipality_id>[0-9]+)/$', views.municipality_record, name='municipality_record'),
     # login
     url(r'^accounts/', include('django.contrib.auth.urls')),
     # register
-    # url(r'^register/$', views.register, name='register'),
+    url(r'^register/$', views.register, name='register'),
     # add complaint
     url(r'^add_complaint/$', views.add_complaint, name='add_complaint'),
 ]
