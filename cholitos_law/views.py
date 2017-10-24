@@ -105,4 +105,7 @@ def register(request):
             return redirect('/')
     else:
         form = UserCreationForm()
+        form.fields['username'].label = "Usuario"
+        form.fields['password1'].label = "Contraseña"
+        form.fields['password2'].label = "Repite contraseña"
     return render(request, 'registration/register.html', {'form': form})

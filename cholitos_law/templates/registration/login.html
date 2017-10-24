@@ -46,11 +46,11 @@
                             <form method="post" class="form-signin">
                             {% csrf_token %}
                                 <div>
-                                  <td>{{ form.username.label_tag }}</td>
+                                  <td>{{ form.username.label_tag }}</td> <br>
                                   <td>{{ form.username }}</td>
                                 </div>
                                 <div>
-                                  <td>{{ form.password.label_tag }}</td>
+                                  <td>{{ form.password.label_tag }}</td> <br>
                                   <td>{{ form.password }}</td>
                                 </div>
                                  <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
