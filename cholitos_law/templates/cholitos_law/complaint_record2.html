@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<<<<<<< HEAD
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+=======
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Ficha de Municipalidad</title>
+>>>>>>> 6540d82edb986ca55d2942f8876ca624d95922d4
+    <title>Ficha de Denuncia</title>
         <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
@@ -31,10 +37,177 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 
+<<<<<<< HEAD
+<div class="wrapper">
+
+    {% include 'cholitos_law/header.html' %}
+
+
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+            <!-- Sidebar Menu -->
+            <ul class="sidebar-menu" data-widget="tree">
+                <li>
+                    <a href="{%  url 'complaint_record_no_param' %}">
+                        <i class="fa fa-bullhorn"></i>
+                        <span>Denunciar</span>
+                    </a>
+                </li>
+            </ul>
+            <!-- /.sidebar-menu -->
+        </section>
+        <!-- /.sidebar -->
+    </aside>
+
+    <div class="content-wrapper">
+
+        <div class="row" style="padding-top: 2em">
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+            </div>
+
+            <div class="col-md-6">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                          <h3 class="box-title">Denuncia</h3>
+                    </div>
+                        <!-- /.box-header -->
+                        <!-- form start -->
+                    <form method="POST" role="form">
+                        <div class="box-body">
+
+                            <div class="form-group">
+                              <label for="tipo">Tipo de Denuncia</label>
+                              <select class="form-control" name="tipo">
+                                  {%  for op in Complaint.types_options %}
+                                    <option value="{{ op }}">{{ op}} </option>
+                                  {% endfor %}
+                              </select>
+                            </div>
+
+                            <div class="form-group">
+                              <label for="tipo_animal">Tipo de Animal</label>
+                              <select class="form-control" name="tipo_animal">
+                                  {%  for op in Complaint.animals_options %}
+                                    <option value="{{ op }}">{{ op}} </option>
+                                  {% endfor %}
+                              </select>
+                            </div>
+
+                            <div class="form-group">
+                              <label for="genero">Genero</label>
+                              <select class="form-control" name="generol">
+                                <option value="hembra"> Hembra </option>
+                                <option value="macho"> Macho </option>
+                              </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="herido">El animal está herido?</label> <br>
+                                <input  type="radio" name="herido" value="si" checked> Si<br>
+                                <input type="radio" name="herido" value="no" checked> No<br>
+                            </div>
+
+
+                        <div class="form-group">
+                          <label for="image">Imagen</label>
+                          <input type="file" id="image">
+
+                          <p class="help-block">Sube alguna imagen de la situación</p>
+                        </div>
+
+                      </div>
+                      <!-- /.box-body -->
+
+                      <div class="box-footer">
+                        <button type="submit" class="btn btn-primary">Denuncia</button>
+                      </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+            </div>
+
+        </div>
+    </div>
+
+    {% include 'cholitos_law/footer.html' %}
+</div>
+=======
+{#    <h1>#}
+{#        Estas viendo la municipalidad {{ municipality_id }}#}
+{#    </h1>#}
+{##}
+{#    <h2>#}
+{#        Lista de municipalidades#}
+{#    </h2>#}
+{##}
+{#    <ul>#}
+{#        {% for muni in municipalities_list %}#}
+{#            <li> {{ muni }} </li>#}
+{#        {% endfor %}#}
+{#    </ul>#}
+>>>>>>> 6540d82edb986ca55d2942f8876ca624d95922d4
+
+
     <div class="wrapper">
+        <!-- Main Header -->
+        <header class="main-header">
+            <!-- Logo -->
+            <a href="#" class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini"><b>CH</b></span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg"><b>Cholito</b></span>
+            </a>
 
-        {% include 'cholitos_law/header.html' %}
-
+            <!-- Header Navbar -->
+            <nav class="navbar navbar-static-top" role="navigation">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+                <!-- Navbar Right Menu -->
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <!-- User Account Menu -->
+                        <li class="dropdown user user-menu">
+                            <!-- Menu Toggle Button -->
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <!-- The user image in the navbar-->
+                                <img src="/static/dist/img/muni-santiago-160x160.png" class="user-image" alt="User Image">
+                                <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                                <span class="hidden-xs">M. de Santiago</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- The user image in the menu -->
+                                <li class="user-header">
+                                    <!-- <img src="/static/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image"> -->
+                                    <img src="/static/dist/img/muni-santiago-160x160.png" class="img-circle" alt="User Image">
+                                    <p>Municipalidad de Santiago</p>
+                                </li>
+                                <!-- Menu Footer-->
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                        <button type="button" class="btn btn-default btn-flat" data-toggle="modal" data-target="#myModal">
+                                            Perfil
+                                        </button>
+                                    </div>
+                                    <div class="pull-right">
+                                        <a href="../registration/login.html" class="btn btn-default btn-flat">Salir</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
         <!-- Left side column. contains the logo and sidebar -->
         <aside class="main-sidebar">
             <!-- sidebar: style can be found in sidebar.less -->
@@ -46,40 +219,23 @@
                     </div>
                     <div class="pull-left info">
                         <!-- <br> -->
-                        <p>{{municipality.name}}</p>
+                        <p>Municipalidad de<br>Santiago</p>
                     </div>
                 </div>
                 <!-- Sidebar Menu -->
                 <ul class="sidebar-menu" data-widget="tree">
                     <!-- Optionally, you can add icons to the links -->
                     <li>
+                        <a href="/">
+                            <i class="fa fa-home"></i>
+                            <span>Landing Page</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="#">
                             <i class="fa fa-bullhorn"></i>
                             <span>Denuncias</span>
                         </a>
-                    </li>
-                    <li class="treeview active menu-open">
-                        <a href="#">
-                            <i class="fa fa-bar-chart"></i>
-                            <span>Estadísticas</span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-circle-o"></i>
-                                    Denuncias
-                                </a>
-                            </li>
-                            <li class="active">
-                                <a href="muni-estadisticas-ongs.html">
-                                    <i class="fa fa-circle-o"></i>
-                                    ONG
-                                </a>
-                            </li>
-                        </ul>
                     </li>
                 </ul>
                 <!-- /.sidebar-menu -->
@@ -92,68 +248,47 @@
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <h1>
-                    ONG
+                    Ficha de Denuncia Numero {{ complaint_id }}
                 </h1>
             </section>
             <!-- Main content -->
-            <section class="content container-fluid">
-                <div class="row">
-                    <div class="col-lg-4 col-sm-6">
-
-                        <!-- Widget: user widget style 1 -->
-                        <div class="box box-widget widget-user">
-                            <!-- Add the bg color to the header using any of the bg-* classes -->
-                            <!-- <div class="widget-user-header bg-black" style="background: url('dist/img/photo1.png') center center;"> -->
-                            <div class="widget-user-header bg-purple-active">
-                                <h3 class="widget-user-username">Fundación EDRA</h3>
-                                <h5 class="widget-user-desc">
-                                    <i class="fa fa-star c-star"></i>
-                                    182
-                                </h5>
-                            </div>
-                            <div class="widget-user-image">
-                                <img class="img-circle" src="/static/dist/img/ong-edra.png" alt="User Avatar">
-                            </div>
-                            <div class="c-box__footer">
-                                <a href="muni-estadisticas-ongs-ong.html" type="button" class="btn btn-primary">
-                                    <i class="fa fa-bar-chart"></i>
-                                    Ver Estadísticas
-                                </a>
-                            </div>
+            <div class="col-md-6">
+                <div class="box box-primary">
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <table class="table table-hover">
+                        <tbody>
+                        <tr>
+                            <th> Tipo </th>
+                            <td> {{ this_complaint.type }} </td>
+                        </tr>
+                        <tr>
+                            <th> Tipo de animal </th>
+                            <td> {{ this_complaint.animal_type }} </td>
+                        </tr>
+                        <tr>
+                            <th> Sexo </th>
+                            <td> {{ this_complaint.gender }} </td>
+                        </tr>
+                        <tr>
+                            <th> Lugar (Lat.-Lon.)</th>
+                            <td> {{ this_complaint.latitude }} - {{ this_complaint.longitude }} </td>
+                        </tr>
+                        <tr>
+                            <th> Declaración </th>
+                            <td> {{ this_complaint.comment }} </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Imagen</div>
+                        <div class="panel-body">
+                            <img class="img-responsive" src="/static/dist/img/{{this_complaint.image}}">
                         </div>
-                        <!-- /.widget-user -->
                     </div>
-                    <!-- /.col -->
                 </div>
-                <!-- /.row -->
-            <!-- /.row -->
-            </section>
-            <section class="content-header">
-                <h1>
-                    Denuncias
-                </h1>
-            </section>
-            <div>
-                <table class="table table-hover">
-                    {% for complaint in complaints_list %}
-                    <tr>
-                        <th> Tipo de denuncia </th>
-                        <th> {{ complaint.type_complaint }} </th>
-                    </tr>
-                    <tr>
-                        <td> Tipo de animal </td>
-                        <td> {{ complaint.animals_options }} </td>
-                    </tr>
-                    <tr>
-                        <td style="background: red" > Herido </td>
-                        <td> {{ complaint.hurt }} </td>
-                    </tr>
-                    <tr>
-                        <td> Rescatado </td>
-                        <td> {{ complaint.rescue }} </td>
-                    </tr>
-                    {% endfor %}
-                </table>
+                <!-- /.box-header -->
+                </div>
             </div>
             <!-- /.content -->
         </div>

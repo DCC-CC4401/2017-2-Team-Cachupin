@@ -43,14 +43,14 @@
                                 </button>
                             </div>
                             <div class="pull-right">
-                                <a href="/login/" class="btn btn-default btn-flat">Salir</a>
+                                <a href="{% url 'logout' %}"  class="btn btn-default btn-flat">Salir</a>
                             </div>
                         </li>
                     </ul>
                 </li>
                 {% else %}
                     <div class="center-block">
-                        <a href="/login/" class="btn btn-info" role="button">Ingresar</a>
+                        <a href="{% url 'login' %}" > <button href="{% url 'login' %}" type="button" class="btn btn-success">Ingresar</button> </a>
                     </div>
                 {% endif %}
                 <!--button type="button" class="btn btn-primary">Primary</button -->

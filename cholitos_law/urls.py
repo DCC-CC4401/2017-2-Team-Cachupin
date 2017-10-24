@@ -1,4 +1,5 @@
 from django.conf.urls import url
+from django.conf.urls import url, include
 
 from . import views
 
@@ -14,7 +15,7 @@ urlpatterns = [
     # ex: /municipality/5/
     url(r'^municipalities/(?P<municipality_id>[0-9]+)/$', views.municipality_record, name='municipality_record'),
     # login
-    url(r'^login/$', views.login, name='login'),
+    url(r'^accounts/', include('django.contrib.auth.urls')),
     # register
-    url(r'^register/$', views.register, name='register'),
+    # url(r'^register/$', views.register, name='register'),
 ]
