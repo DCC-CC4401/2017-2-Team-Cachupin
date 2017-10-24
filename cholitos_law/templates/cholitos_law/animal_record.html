@@ -71,7 +71,7 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-                <table>
+                <table class="table table-hover">
                     <tr>
                         <th> Nombre </th>
                         <th> {{ this_animal.name }} </th>
@@ -89,10 +89,10 @@
                         <td> {{ age }} </td>
                     </tr>
                     <tr>
-                        <td> Edad estimada </td>
+                        <td> Tiempo en adopcion </td>
                         <td> {{ time }} </td>
                     </tr>
-                </table>1
+                </table>
                 <img src="/static/dist/img/{{this_animal.image}}">
                 <h2> Descripcion </h2>
                 <p>{{ this_animal.description }}</p>

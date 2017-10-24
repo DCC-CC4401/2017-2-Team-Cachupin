@@ -60,10 +60,16 @@ def complaint_record(request, complaint_id=''):
 
 
 def municipality_record(request, municipality_id):
-    municipalities_list = Municipality.objects.all()
+    municipality = Municipality.objects.get(pk=municipality_id)
+
+    complaints_list = Complaint.objects.filter(
+        municipality=municipality_id
+    )
+
     context = {
-        'municipalities_list': municipalities_list,
+        'municipality': municipality,
         'municipality_id': municipality_id,
+        'complaints_list': complaints_list,
     }
 
     return render(request, 'cholitos_law/municipality_record.html', context)

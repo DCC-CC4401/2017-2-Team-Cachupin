@@ -21,6 +21,8 @@
     <!-- iCheck -->
     <link rel="stylesheet" href="static/plugins/iCheck/square/blue.css">
     <link rel="stylesheet" href="static/dist/css/general.css">
+    <!-- maps -->
+    <link rel="stylesheet" href="static/dist/css/map.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -100,10 +102,38 @@
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
             <!-- Main content -->
+            <script>
+                $(document).ready(function(){
+                $('[data-toggle="popover"]').popover();
+                });
+            </script>
             <section class="content container-fluid">
-
+                <div class = "row text-center" style="">
+                    <div class="col-xs-12 text-center" style="background-color:transparent; margin-top:10px;">
+                        <div class='product-holder'>
+                            <img src="/static/dist/img/mapa.png" class='img-responsive'>
+                            <img href="#" data-toggle="popover" tabindex="50" src="/static/dist/img/Map-Pin.png" width="25px" height="40px" class='plus-image1'>
+                            <img href="#" data-toggle="popover" tabindex="50" src="/static/dist/img/star.ico" width="30px" height="30px" class='plus-image2'>
+                            <img href="#" data-toggle="popover" tabindex="50" src="/static/dist/img/Map-Pin.png" width="25px" height="40px" class='plus-image3'>
+                            <img href="#" data-toggle="popover" tabindex="50" src="/static/dist/img/Map-Pin.png" width="25px" height="40px" class='plus-image4'>
+                            <img href="#" data-toggle="popover" tabindex="50" src="/static/dist/img/Map-Pin.png" width="25px" height="40px" class='plus-image5'>
+                            <img href="#" data-toggle="popover" tabindex="50" src="/static/dist/img/Map-Pin.png" width="25px" height="40px" class='plus-image6'>
+                            <img href="#" data-toggle="popover" tabindex="50" src="/static/dist/img/Map-Pin.png" width="25px" height="40px" class='plus-image7'>
+                            <img href="#" data-toggle="popover" tabindex="50" src="/static/dist/img/Map-Pin.png" width="25px" height="40px" class='plus-image8'>
+                            <script>
+                                $(function(){
+                                $('[data-toggle=popover]').popover({
+                                trigger: 'focus',
+                                html: true,
+                                title: 'ONG'
+                                })
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div>
                 <!-- div id="map" class="c-mapa"></div -->
-                <img class="img-responsive" src="/static/dist/img/mapa.png">
+                <!--img class="img-responsive" src="/static/dist/img/mapa.png"-->
 
             </section>
             <!-- /.content -->

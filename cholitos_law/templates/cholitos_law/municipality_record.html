@@ -46,7 +46,7 @@
                     </div>
                     <div class="pull-left info">
                         <!-- <br> -->
-                        <p>Municipalidad de<br>Santiago</p>
+                        <p>{{municipality.name}}</p>
                     </div>
                 </div>
                 <!-- Sidebar Menu -->
@@ -128,6 +128,46 @@
                 <!-- /.row -->
             <!-- /.row -->
             </section>
+            <section class="content-header">
+                <h1>
+                    Denuncias Recientes
+                </h1>
+            </section>
+            <div class="box-body" style="max-height: 400px; max-width : 90%; margin: 0 auto; overflow-y: scroll;">
+                {% for complaint in complaints_list %}
+                <div class="panel panel-default">                    
+                    <table class="table table-hover">
+                        <tr>
+                            <th> Tipo de denuncia </th>
+                            <th> {{ complaint.type_complaint }} </th>
+                        </tr>
+                        <tr>
+                            <td> Tipo de animal </td>
+                            <td> {{ complaint.animals_options }} </td>
+                        </tr>
+                        <tr>
+                            <td> Herido </td>
+                            {% if True == complaint.hurt %}
+                                <td style="color: red"> Si </td>
+                            {% else %}
+                                <td > No </td>
+                            {% endif %}
+
+                        </tr>
+                        <tr>
+                            <td> Rescatado </td>
+                            {% if True == complaint.rescue %}
+                                <td style="color: red"> No </td>
+                            {% else %}
+                                <td > Si </td>
+                            {% endif %}
+                        </tr>
+                    </table>
+                    <img src="/static/dist/img/{{complaint.image}}" style="margin: 10px auto; display: block;">
+                </div>
+                {% endfor %}
+                    
+            </div>
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
